@@ -29,13 +29,13 @@ export async function Footer() {
   const nav = await getTranslations("Navigation");
 
   return (
-    <footer className="bg-blue-darker text-white">
-      <div className="mx-auto max-w-7xl px-6 pb-6 pt-20 sm:px-10 sm:pt-24">
+    <footer className="bg-background text-foreground">
+      <div className="page-container pb-6 pt-20 sm:pt-24">
         <section className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {t("title")}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-muted sm:text-base">
             {t("description")}
           </p>
           <Link
@@ -49,7 +49,7 @@ export async function Footer() {
           </Link>
         </section>
 
-        <div className="mt-20 flex flex-col items-center justify-between gap-8 border-b border-white/70 pb-12 lg:flex-row">
+        <div className="mt-20 flex flex-col items-center justify-between gap-8 border-b border-border pb-12 lg:flex-row">
           <Link
             href="/"
             aria-label="Newstensity"
@@ -65,7 +65,7 @@ export async function Footer() {
               <Link
                 key={key}
                 href={href}
-                className="text-sm text-white transition-colors hover:text-sky-300"
+                className="text-sm text-foreground transition-colors hover:text-blue-normal"
               >
                 {nav(key)}
               </Link>
@@ -77,7 +77,7 @@ export async function Footer() {
                 key={label}
                 href="#social"
                 aria-label={label}
-                className="inline-flex size-10 items-center justify-center rounded-full border border-white/80 transition-colors hover:bg-white/10"
+                className="inline-flex size-10 items-center justify-center rounded-full border border-border transition-colors hover:bg-surface"
               >
                 <Icon aria-hidden="true" size={17} />
               </a>
@@ -85,15 +85,15 @@ export async function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-white/90 sm:flex-row sm:text-sm">
+        <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-muted sm:flex-row sm:text-sm">
           <p>
             Copyright {new Date().getFullYear()} Newstensity. {t("copyright")}
           </p>
           <div className="flex gap-6">
-            <Link href="#terms" className="hover:text-sky-300">
+            <Link href="#terms" className="hover:text-blue-normal">
               {t("terms")}
             </Link>
-            <Link href="#privacy" className="hover:text-sky-300">
+            <Link href="#privacy" className="hover:text-blue-normal">
               {t("privacy")}
             </Link>
           </div>

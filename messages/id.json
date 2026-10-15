@@ -15,13 +15,6 @@
     "closeMenu": "Tutup menu",
     "switchLanguage": "Ganti bahasa"
   },
-  "Home": {
-    "eyebrow": "Intelijen media yang lebih jelas",
-    "title": "Ubah media menjadi",
-    "titleAccent": "intelijen.",
-    "description": "Pahami percakapan, temukan sinyal penting, dan ambil keputusan dengan lebih percaya diri.",
-    "cta": "Jelajahi produk"
-  },
   "Footer": {
     "title": "Siap mengubah media menjadi intelijen?",
     "description": "Minta demo personal dan temukan bagaimana Newstensity membantu organisasi memahami lanskap media.",
@@ -30,5 +23,171 @@
     "terms": "Ketentuan layanan",
     "privacy": "Kebijakan privasi",
     "copyright": "Hak cipta dilindungi."
+  },
+  "Landing": {
+    "Hero": {
+      "eyebrow": "Product",
+      "title": "Ubah percakapan media menjadi",
+      "titleAccent": "langkah bermakna.",
+      "description": "Pantau pemberitaan, pahami sentimen, dan temukan isu yang penting bagi organisasi Anda dalam satu ruang kerja.",
+      "primaryAction": "Jelajahi Platform",
+      "secondaryAction": "Minta Demo",
+      "supportingText": "Satu tampilan untuk membantu tim memahami lanskap media."
+    },
+    "Dashboard": {
+      "sample": "PRATINJAU PLATFORM · DATA ILUSTRASI",
+      "title": "Ringkasan pemantauan",
+      "live": "MONITORING",
+      "mentions": "Pemberitaan terpantau",
+      "sampleGrowth": "Contoh perubahan periode",
+      "sources": "Sumber berita",
+      "sourcesMonitored": "Contoh cakupan sumber",
+      "coverage": "Volume pemberitaan",
+      "lastSevenDays": "Tren 7 hari terakhir",
+      "weekStart": "7 hari lalu",
+      "today": "Hari ini",
+      "topTopics": "Topik yang dibicarakan",
+      "sampleData": "Data sampel",
+      "topics": [
+        { "name": "Transformasi digital", "mentions": "2.4k", "tone": "blue" },
+        { "name": "Keberlanjutan", "mentions": "1.8k", "tone": "green" },
+        { "name": "Layanan publik", "mentions": "980", "tone": "red" }
+      ]
+    },
+    "Product": {
+      "eyebrow": "Dari berita ke pemahaman",
+      "title": "Satu alur kerja untuk memahami lanskap media",
+      "description": "Newstensity membantu tim mengubah volume informasi yang besar menjadi konteks yang mudah ditindaklanjuti.",
+      "steps": {
+        "collect": {
+          "eyebrow": "01 · PANTAU",
+          "title": "Kumpulkan percakapan",
+          "description": "Pantau pemberitaan dan topik relevan dari berbagai sumber dalam satu tempat."
+        },
+        "understand": {
+          "eyebrow": "02 · PAHAMI",
+          "title": "Temukan konteksnya",
+          "description": "Lihat topik, sentimen, dan perubahan percakapan untuk memahami apa yang sedang terjadi."
+        },
+        "act": {
+          "eyebrow": "03 · TINDAK LANJUTI",
+          "title": "Bagikan insight",
+          "description": "Susun temuan menjadi ringkasan yang membantu tim menentukan langkah berikutnya."
+        }
+      }
+    },
+    "Solutions": {
+      "eyebrow": "Problem & solutions",
+      "title": "Dari kebisingan informasi ke sinyal yang jelas",
+      "description": "Kurangi pekerjaan manual dan bantu tim berfokus pada percakapan yang paling relevan.",
+      "cards": {
+        "noise": {
+          "problem": "TANTANGAN · TERLALU BANYAK SUMBER",
+          "title": "Temukan isu yang relevan",
+          "description": "Satukan pemantauan berbagai kanal agar tim tidak perlu mencari berita satu per satu."
+        },
+        "context": {
+          "problem": "TANTANGAN · KONTEKS TERPISAH",
+          "title": "Pahami percakapan secara utuh",
+          "description": "Hubungkan topik dan sentimen untuk melihat bagaimana narasi berkembang dari waktu ke waktu."
+        },
+        "time": {
+          "problem": "TANTANGAN · LAPORAN MANUAL",
+          "title": "Sampaikan temuan dengan cepat",
+          "description": "Ubah hasil pemantauan menjadi ringkasan yang lebih mudah dibagikan dan ditindaklanjuti."
+        }
+      }
+    },
+    "Features": {
+      "eyebrow": "Fitur utama",
+      "title": "Perangkat yang membantu tim tetap selangkah di depan",
+      "description": "Mulai dari pemantauan hingga pelaporan, semua dirancang untuk memberi konteks pada percakapan media.",
+      "cards": {
+        "monitoring": {
+          "title": "Media monitoring",
+          "description": "Pantau berita dan percakapan yang sesuai dengan kata kunci serta topik pilihan tim."
+        },
+        "sentiment": {
+          "title": "Analisis sentimen",
+          "description": "Pahami kecenderungan percakapan dan perubahan respons terhadap isu atau brand."
+        },
+        "alerts": {
+          "title": "Peringatan isu",
+          "description": "Bantu tim memberi perhatian pada lonjakan pemberitaan dan topik yang sedang berkembang."
+        },
+        "reports": {
+          "title": "Ringkasan & laporan",
+          "description": "Susun temuan pemantauan agar lebih mudah dibaca, dibagikan, dan dibahas bersama."
+        }
+      }
+    },
+    "Explore": {
+      "eyebrow": "Jelajahi insight",
+      "title": "Lihat topik, sumber, dan sentimen dalam konteks",
+      "description": "Jelajahi bagaimana ringkasan visual dapat membantu tim memahami apa yang ramai dibicarakan dan bagaimana narasinya berkembang.",
+      "benefits": {
+        "first": "Bandingkan topik yang sedang tumbuh dan percakapan yang mulai mereda.",
+        "second": "Lihat nada pemberitaan untuk membantu menentukan prioritas respons.",
+        "third": "Bawa insight yang sama ke diskusi lintas tim dan laporan berkala."
+      },
+      "previewLabel": "CONTOH TAMPILAN",
+      "previewTitle": "Peta percakapan media",
+      "sampleData": "Ilustrasi data",
+      "insight": "Ringkasan insight membantu tim melihat perubahan percakapan tanpa membaca setiap artikel satu per satu.",
+      "topics": [
+        {
+          "name": "Transformasi digital",
+          "category": "Topik",
+          "tone": "blue",
+          "mentions": "2.4k"
+        },
+        {
+          "name": "Keberlanjutan",
+          "category": "Isu",
+          "tone": "green",
+          "mentions": "1.8k"
+        },
+        {
+          "name": "Layanan publik",
+          "category": "Topik",
+          "tone": "red",
+          "mentions": "980"
+        },
+        {
+          "name": "Inovasi",
+          "category": "Narasi",
+          "tone": "blue",
+          "mentions": "760"
+        }
+      ]
+    },
+    "Faq": {
+      "eyebrow": "Pertanyaan umum",
+      "title": "Hal yang mungkin ingin Anda ketahui",
+      "description": "Gambaran singkat tentang cara Newstensity membantu tim memahami pemberitaan.",
+      "items": [
+        {
+          "question": "Apa itu Newstensity?",
+          "answer": "Newstensity adalah platform intelijen media yang membantu organisasi memantau pemberitaan, memahami percakapan, dan membagikan insight kepada tim."
+        },
+        {
+          "question": "Apa yang dapat dipantau dengan Newstensity?",
+          "answer": "Tim dapat memantau kata kunci, topik, brand, organisasi, atau isu yang relevan. Cakupan sumber dan konfigurasi dapat disesuaikan dengan kebutuhan."
+        },
+        {
+          "question": "Siapa yang dapat menggunakan platform ini?",
+          "answer": "Platform ini dapat mendukung tim komunikasi, public relations, marketing, corporate affairs, maupun pemimpin yang membutuhkan gambaran percakapan media."
+        },
+        {
+          "question": "Bagaimana cara melihat demo?",
+          "answer": "Gunakan tombol Minta demo untuk menghubungi tim Newstensity dan mendiskusikan kebutuhan pemantauan organisasi Anda."
+        }
+      ]
+    },
+    "CTA": {
+      "title": "Siap melihat lanskap media dengan lebih jelas?",
+      "description": "Jelajahi bagaimana Newstensity dapat membantu tim Anda mengubah percakapan media menjadi insight yang berguna.",
+      "button": "Lihat pertanyaan umum"
+    }
   }
 }
