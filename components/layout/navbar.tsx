@@ -2,19 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { buttonStyles } from "@/components/ui/button";
+import { landingContent, type LandingLocale } from "@/data/landing";
 import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 
 const navLinks = [
   { key: "product", href: "#product" },
   { key: "solutions", href: "#solutions" },
-  { key: "features", href: "#features" },
-  { key: "explore", href: "#explore" },
-  { key: "faq", href: "#faq" },
 ] as const;
 
 function LanguageFlag({
@@ -42,8 +40,8 @@ export function Navbar() {
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const desktopLanguageRef = useRef<HTMLDivElement>(null);
   const mobileLanguageRef = useRef<HTMLDivElement>(null);
-  const t = useTranslations("Navigation");
-  const locale = useLocale() as Locale;
+  const locale = useLocale() as LandingLocale & Locale;
+  const content = landingContent[locale].navigation;
   const pathname = usePathname();
 
   useEffect(() => {
@@ -76,12 +74,12 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-3 sm:top-5 sm:px-6 lg:px-6">
       <nav
-        aria-label={t("label")}
+        aria-label={content.label}
         className="mx-auto flex min-h-[60px] max-w-[1440px] items-center justify-between gap-2 rounded-full border border-blue-light-active bg-blue-light px-4 py-3 text-blue-normal shadow-[0_12px_40px_rgba(13,41,65,0.12)] backdrop-blur-xl dark:border-white/15 dark:bg-[#113454] dark:text-white sm:min-h-[72px] sm:gap-4 sm:px-8 sm:py-4"
       >
         <button
           type="button"
-          aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
+          aria-label={menuOpen ? content.closeMenu : content.openMenu}
           aria-expanded={menuOpen}
           onClick={() => {
             setMenuOpen(!menuOpen);
@@ -121,7 +119,7 @@ export function Navbar() {
               href={href}
               className="relative py-2 text-sm font-semibold text-blue-normal after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-blue-normal after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:after:scale-x-100 dark:text-white"
             >
-              {t(key)}
+              {content[key]}
             </Link>
           ))}
         </div>
@@ -131,7 +129,7 @@ export function Navbar() {
           <div ref={desktopLanguageRef} className="relative">
             <button
               type="button"
-              aria-label={t("switchLanguage")}
+              aria-label={content.switchLanguage}
               aria-expanded={desktopLanguageOpen}
               aria-controls="desktop-language-options"
               onClick={() => setDesktopLanguageOpen((open) => !open)}
@@ -162,7 +160,8 @@ export function Navbar() {
                   className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground hover:bg-surface dark:text-white dark:hover:bg-white/10"
                 >
                   <span className="flex items-center gap-2">
-                    <LanguageFlag locale="id" size={16} /> Bahasa Indonesia
+                    <LanguageFlag locale="id" size={16} />
+                    {content.languageNames.id}
                   </span>
                   <span className="text-xs text-muted">ID</span>
                 </Link>
@@ -174,7 +173,8 @@ export function Navbar() {
                   className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground hover:bg-surface dark:text-white dark:hover:bg-white/10"
                 >
                   <span className="flex items-center gap-2">
-                    <LanguageFlag locale="en" size={16} /> English
+                    <LanguageFlag locale="en" size={16} />
+                    {content.languageNames.en}
                   </span>
                   <span className="text-xs text-muted">EN</span>
                 </Link>
@@ -182,7 +182,7 @@ export function Navbar() {
             )}
           </div>
           <Link href="#login" className={buttonStyles("default", "min-w-28")}>
-            {t("login")}
+            {content.login}
           </Link>
         </div>
 
@@ -191,7 +191,7 @@ export function Navbar() {
           <div ref={mobileLanguageRef} className="relative">
             <button
               type="button"
-              aria-label={t("switchLanguage")}
+              aria-label={content.switchLanguage}
               aria-expanded={mobileLanguageOpen}
               aria-controls="mobile-language-options"
               onClick={() => setMobileLanguageOpen((open) => !open)}
@@ -222,7 +222,8 @@ export function Navbar() {
                   className="block rounded-xl px-3 py-2.5 text-sm text-foreground hover:bg-surface dark:text-white dark:hover:bg-white/10"
                 >
                   <span className="flex items-center gap-2">
-                    <LanguageFlag locale="id" size={16} /> Bahasa Indonesia
+                    <LanguageFlag locale="id" size={16} />
+                    {content.languageNames.id}
                   </span>
                 </Link>
                 <Link
@@ -233,7 +234,8 @@ export function Navbar() {
                   className="block rounded-xl px-3 py-2.5 text-sm text-foreground hover:bg-surface dark:text-white dark:hover:bg-white/10"
                 >
                   <span className="flex items-center gap-2">
-                    <LanguageFlag locale="en" size={16} /> English
+                    <LanguageFlag locale="en" size={16} />
+                    {content.languageNames.en}
                   </span>
                 </Link>
               </div>
@@ -254,7 +256,7 @@ export function Navbar() {
               }}
               className="relative rounded-xl px-4 py-3 text-sm font-medium text-blue-normal transition-colors after:absolute after:inset-x-4 after:bottom-2 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-blue-normal after:transition-transform after:duration-300 hover:after:scale-x-100 dark:text-white"
             >
-              {t(key)}
+              {content[key]}
             </Link>
           ))}
           <div className="border-t border-border px-4 pt-3 dark:border-white/20">
@@ -263,7 +265,7 @@ export function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={buttonStyles("default", "w-full")}
             >
-              {t("login")}
+              {content.login}
             </Link>
           </div>
         </div>

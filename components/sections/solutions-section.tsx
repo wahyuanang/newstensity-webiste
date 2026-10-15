@@ -1,47 +1,56 @@
-import { Clock3, Search, Waypoints } from "lucide-react";
-import { getTranslations } from "next-intl/server";
-import { SectionHeading } from "@/components/sections/section-heading";
-
-const solutionCards = [
-  { key: "noise", Icon: Search },
-  { key: "context", Icon: Waypoints },
-  { key: "time", Icon: Clock3 },
-] as const;
+﻿import { getLocale } from "next-intl/server";
+import { SolutionsCarousel } from "@/components/sections/solutions-carousel";
+import { Badge } from "@/components/ui/badge";
+import { buttonStyles } from "@/components/ui/button";
+import { landingContent, type LandingLocale } from "@/data/landing";
+import { Link } from "@/i18n/navigation";
 
 export async function SolutionsSection() {
-  const t = await getTranslations("Landing.Solutions");
+  const locale = (await getLocale()) as LandingLocale;
+  const content = landingContent[locale].solutions;
 
   return (
     <section
       id="solutions"
-      className="scroll-mt-28 bg-background py-20 sm:py-28"
+      aria-labelledby="solutions-title"
+      className="scroll-mt-28 bg-background py-16 sm:py-20 lg:py-28"
     >
-      <div className="page-container">
-        <SectionHeading
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          description={t("description")}
+      <div className="page-container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <SolutionsCarousel
+          label={content.carouselLabel}
+          imageAlt={content.imageAlt}
         />
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {solutionCards.map(({ key, Icon }) => (
-            <article
-              key={key}
-              className="group rounded-3xl border border-border bg-background p-6 transition duration-200 hover:-translate-y-1 hover:border-blue-light-active hover:shadow-[0_18px_50px_rgba(13,41,65,0.08)] sm:p-8"
-            >
-              <div className="flex size-12 items-center justify-center rounded-2xl bg-blue-light text-blue-normal transition-colors group-hover:bg-blue-normal group-hover:text-white dark:bg-blue-dark/40">
-                <Icon aria-hidden="true" size={22} />
+        <div className="max-w-2xl">
+          <Badge variant="blue" className="mb-5 uppercase tracking-wide">
+            {content.eyebrow}
+          </Badge>
+          <h2
+            id="solutions-title"
+            className="text-3xl font-semibold leading-tight tracking-tight text-blue-dark sm:text-4xl lg:text-[2.5rem]"
+          >
+            {content.title}
+          </h2>
+          <p className="mt-4 text-sm leading-6 text-foreground sm:text-base sm:leading-7">
+            {content.description}
+          </p>
+          <dl className="mt-6 grid grid-cols-3 divide-x divide-border">
+            {content.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="px-3 first:pl-0 last:pr-0 sm:px-6"
+              >
+                <dt className="text-2xl font-medium leading-none text-foreground sm:text-3xl">
+                  {stat.value}
+                </dt>
+                <dd className="mt-3 text-xs text-blue-normal sm:text-sm">
+                  {stat.label}
+                </dd>
               </div>
-              <p className="mt-7 text-sm font-medium text-red-500">
-                {t(`cards.${key}.problem`)}
-              </p>
-              <h3 className="mt-2 text-xl font-semibold text-foreground">
-                {t(`cards.${key}.title`)}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                {t(`cards.${key}.description`)}
-              </p>
-            </article>
-          ))}
+            ))}
+          </dl>
+          <Link href="#contact" className={buttonStyles("default", "mt-7")}>
+            {content.button}
+          </Link>
         </div>
       </div>
     </section>

@@ -120,9 +120,9 @@ body {
 }
 
 :root {
-  --badge-blue-bg: #e9f1f8;
-  --badge-blue-border: #bcd4ea;
-  --badge-blue-text: #2268a7;
+  --badge-blue-bg: #deebf5;
+  --badge-blue-border: #2674ba;
+  --badge-blue-text: #2674ba;
   --badge-red-bg: #fff1f2;
   --badge-red-border: #fecaca;
   --badge-red-text: #c13e3e;

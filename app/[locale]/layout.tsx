@@ -2,13 +2,10 @@
 import { notFound } from "next/navigation";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import {
-  getMessages,
-  getTranslations,
-  setRequestLocale,
-} from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { landingContent, type LandingLocale } from "@/data/landing";
 import { routing, type Locale } from "@/i18n/routing";
 import "../globals.css";
 
@@ -33,10 +30,10 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const metadata = landingContent[locale as LandingLocale].metadata;
   return {
-    title: t("title"),
-    description: t("description"),
+    title: metadata.title,
+    description: metadata.description,
     alternates: {
       canonical: `/${locale}`,
       languages: { id: "/id", en: "/en" },
@@ -52,11 +49,10 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale as Locale);
 
-  const messages = await getMessages();
   return (
     <html lang={locale}>
       <body className={inter.variable}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider>
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[52rem] bg-[url('/images/bg-hero-lightmode.png')] bg-cover bg-top bg-no-repeat opacity-90 dark:bg-[url('/images/bg-hero-darkmode.png')] dark:opacity-60"

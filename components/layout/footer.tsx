@@ -1,4 +1,4 @@
-﻿import { getTranslations } from "next-intl/server";
+﻿import { getLocale } from "next-intl/server";
 import {
   ArrowRight,
   Instagram,
@@ -7,14 +7,12 @@ import {
   Youtube,
 } from "lucide-react";
 import { buttonStyles } from "@/components/ui/button";
+import { landingContent, type LandingLocale } from "@/data/landing";
 import { Link } from "@/i18n/navigation";
 
 const navLinks = [
   { key: "product", href: "#product" },
   { key: "solutions", href: "#solutions" },
-  { key: "features", href: "#features" },
-  { key: "explore", href: "#explore" },
-  { key: "faq", href: "#faq" },
 ] as const;
 
 const socials = [
@@ -25,18 +23,19 @@ const socials = [
 ];
 
 export async function Footer() {
-  const t = await getTranslations("Footer");
-  const nav = await getTranslations("Navigation");
+  const locale = (await getLocale()) as LandingLocale;
+  const content = landingContent[locale];
+  const footer = content.footer;
 
   return (
-    <footer className="bg-background text-foreground">
+    <footer id="contact" className="bg-background text-foreground">
       <div className="page-container pb-6 pt-20 sm:pt-24">
         <section className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {t("title")}
+            {footer.title}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-muted sm:text-base">
-            {t("description")}
+            {footer.description}
           </p>
           <Link
             href="#contact"
@@ -45,7 +44,7 @@ export async function Footer() {
               "mt-6 bg-white text-blue-normal hover:bg-blue-light dark:bg-white dark:text-blue-normal dark:hover:bg-blue-light",
             )}
           >
-            {t("requestDemo")} <ArrowRight aria-hidden="true" size={17} />
+            {footer.requestDemo} <ArrowRight aria-hidden="true" size={17} />
           </Link>
         </section>
 
@@ -58,7 +57,7 @@ export async function Footer() {
             newstensity
           </Link>
           <nav
-            aria-label={t("navigation")}
+            aria-label={footer.navigation}
             className="flex flex-wrap justify-center gap-x-8 gap-y-3"
           >
             {navLinks.map(({ key, href }) => (
@@ -67,7 +66,7 @@ export async function Footer() {
                 href={href}
                 className="text-sm text-foreground transition-colors hover:text-blue-normal"
               >
-                {nav(key)}
+                {content.navigation[key]}
               </Link>
             ))}
           </nav>
@@ -87,14 +86,15 @@ export async function Footer() {
 
         <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-muted sm:flex-row sm:text-sm">
           <p>
-            Copyright {new Date().getFullYear()} Newstensity. {t("copyright")}
+            {footer.copyrightLabel} {new Date().getFullYear()} Newstensity.{" "}
+            {footer.copyright}
           </p>
           <div className="flex gap-6">
             <Link href="#terms" className="hover:text-blue-normal">
-              {t("terms")}
+              {footer.terms}
             </Link>
             <Link href="#privacy" className="hover:text-blue-normal">
-              {t("privacy")}
+              {footer.privacy}
             </Link>
           </div>
         </div>

@@ -1,28 +1,14 @@
-import Image from "next/image";
-import { getTranslations } from "next-intl/server";
-import { FadeIn } from "@/components/fade-in";
+﻿import Image from "next/image";
+import { getLocale } from "next-intl/server";
+import { FadeIn } from "@/components/ui/fade-in";
+import { Badge } from "@/components/ui/badge";
+import { buttonStyles } from "@/components/ui/button";
+import { landingContent, type LandingLocale } from "@/data/landing";
 import { Link } from "@/i18n/navigation";
 
 type HeroCardAsset = {
   src: string;
   alt: string;
-};
-
-const summaryCard: HeroCardAsset = {
-  src: "/images/Card Bounce 1.png",
-  alt: "AI Summary: ringkasan liputan media",
-};
-const reporterCard: HeroCardAsset = {
-  src: "/images/Card Bounce 2.png",
-  alt: "Top Reporter: reporter dengan liputan terbanyak",
-};
-const alertCard: HeroCardAsset = {
-  src: "/images/Card Bounce 4.png",
-  alt: "Spike Alert: peringatan lonjakan sentimen negatif",
-};
-const mentionsCard: HeroCardAsset = {
-  src: "/images/Frame 427319157.png",
-  alt: "Mention by Day: perbandingan jumlah penyebutan",
 };
 
 function HeroCard({ asset }: { asset: HeroCardAsset }) {
@@ -38,74 +24,81 @@ function HeroCard({ asset }: { asset: HeroCardAsset }) {
 }
 
 export async function HeroSection() {
-  const t = await getTranslations("Landing.Hero");
+  const locale = (await getLocale()) as LandingLocale;
+  const content = landingContent[locale].hero;
 
   return (
-    <section className="relative isolate overflow-hidden bg-transparent pb-14 pt-6 sm:pb-20 sm:pt-10 lg:pt-24">
+    <section
+      id="product"
+      className="relative isolate overflow-hidden bg-transparent pb-14 pt-6 sm:pb-20 sm:pt-10 lg:pt-24"
+    >
       <div className="page-container text-center">
         <FadeIn className="mx-auto max-w-3xl">
-          <div className="mb-6 inline-flex min-h-10 items-center justify-center rounded-full border border-blue-normal bg-blue-light-hover px-7 text-sm font-semibold uppercase text-blue-normal sm:min-h-[50px] sm:px-9 sm:text-base">
-            {t("eyebrow")}
-          </div>
+          <Badge variant="blue" className="mb-6 uppercase">
+            {content.eyebrow}
+          </Badge>
           <h1 className="text-[2rem] font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] xl:text-5xl">
-            {t("title")}{" "}
-            <span className="text-blue-normal">{t("titleAccent")}</span>
+            {content.title}{" "}
+            <span className="text-blue-normal">{content.titleAccent}</span>
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-6 text-muted sm:text-base sm:leading-7 lg:text-lg">
-            {t("description")}
+            {content.description}
           </p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <Link
               href="#product"
-              className="inline-flex min-h-[43px] w-full items-center justify-center gap-2 rounded-full bg-blue-normal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-hover active:bg-blue-active sm:w-auto sm:text-base"
+              className={buttonStyles("default", "w-full sm:w-auto")}
             >
-              {t("primaryAction")}
+              {content.primaryAction}
             </Link>
             <Link
               href="#contact"
-              className="inline-flex min-h-[43px] w-full items-center justify-center gap-2 rounded-full border border-blue-normal bg-transparent px-6 py-3 text-sm font-semibold text-blue-normal transition-colors hover:bg-blue-light dark:hover:bg-blue-dark/30 sm:w-auto sm:text-base"
+              className={buttonStyles("outline", "w-full sm:w-auto")}
             >
-              {t("secondaryAction")}
+              {content.secondaryAction}
             </Link>
           </div>
         </FadeIn>
+
         <FadeIn className="relative mx-auto mt-8 w-full sm:mt-10 lg:mt-16">
           <div className="mb-3 grid grid-cols-2 gap-3 lg:hidden">
             <div className="hero-float-card">
-              <HeroCard asset={summaryCard} />
+              <HeroCard asset={content.cards.summary} />
             </div>
             <div
               className="hero-float-card"
               style={{ animationDelay: "-1.5s" }}
             >
-              <HeroCard asset={reporterCard} />
+              <HeroCard asset={content.cards.reporter} />
             </div>
           </div>
+
           <div className="hero-float-card pointer-events-none absolute left-0 top-[-12%] z-10 hidden w-[15%] lg:block">
-            <HeroCard asset={summaryCard} />
+            <HeroCard asset={content.cards.summary} />
           </div>
           <div
             className="hero-float-card pointer-events-none absolute right-0 top-[-12%] z-10 hidden w-[15%] lg:block"
             style={{ animationDelay: "-1.5s" }}
           >
-            <HeroCard asset={mentionsCard} />
+            <HeroCard asset={content.cards.mentions} />
           </div>
           <div
             className="hero-float-card pointer-events-none absolute bottom-[18%] left-0 z-10 hidden w-[15%] lg:block"
             style={{ animationDelay: "-3s" }}
           >
-            <HeroCard asset={reporterCard} />
+            <HeroCard asset={content.cards.reporter} />
           </div>
           <div
             className="hero-float-card pointer-events-none absolute bottom-[18%] right-0 z-10 hidden w-[15%] lg:block"
             style={{ animationDelay: "-4.5s" }}
           >
-            <HeroCard asset={alertCard} />
+            <HeroCard asset={content.cards.alert} />
           </div>
+
           <div className="relative z-0 mx-auto w-full overflow-hidden rounded-2xl border border-blue-light-active/70 shadow-[0_24px_80px_rgba(13,41,65,0.18)] dark:border-blue-dark lg:w-[65%]">
             <Image
               src="/gifs/newstensity-dashboard-light-gift.gif"
-              alt="Preview dashboard analisis media Newstensity"
+              alt={content.dashboardAlt}
               width={958}
               height={450}
               unoptimized
@@ -114,7 +107,7 @@ export async function HeroSection() {
             />
             <Image
               src="/gifs/newstensity-dashboard-dark-gift.gif"
-              alt="Preview dashboard analisis media Newstensity dalam mode gelap"
+              alt={content.dashboardDarkAlt}
               width={958}
               height={450}
               unoptimized
@@ -122,15 +115,16 @@ export async function HeroSection() {
               className="hidden h-auto w-full dark:block"
             />
           </div>
+
           <div className="mt-3 grid grid-cols-2 gap-3 lg:hidden">
             <div className="hero-float-card" style={{ animationDelay: "-3s" }}>
-              <HeroCard asset={mentionsCard} />
+              <HeroCard asset={content.cards.mentions} />
             </div>
             <div
               className="hero-float-card"
               style={{ animationDelay: "-4.5s" }}
             >
-              <HeroCard asset={alertCard} />
+              <HeroCard asset={content.cards.alert} />
             </div>
           </div>
         </FadeIn>

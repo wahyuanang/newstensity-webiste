@@ -24,15 +24,15 @@ Open [http://localhost:3000](http://localhost:3000) to see the page.
 
 - `app/[locale]/` — server-rendered Indonesian and English routes, localized metadata, and layout
 - `app/globals.css` — global styles and Newstensity design tokens
-- `components/ui/` — shadcn-style buttons, badges, inputs, selects, textarea, accordion, and carousel
+- `components/ui/` — reusable buttons, badges, inputs, selects, textarea, accordion, carousel, and motion primitives
 - `components/layout/` — navbar, footer, and theme control
+- `components/sections/` — landing sections currently requested: hero and problem & solutions
+- `data/landing.ts` — localized page content, image descriptions, navigation/footer copy, and SEO metadata
 - `i18n/` — locale routing and next-intl configuration
-- `messages/` — Indonesian and English translation dictionaries
-- `components/` — shared page components
 - `lib/` — shared helpers
 - `public/images/` — image assets served from `/images/...`
 - `public/gifs/` — GIF assets served from `/gifs/...`
 
 UI primitives are customized to match the Newstensity design tokens. Add more shadcn/ui components with `npx shadcn add <component>`.
 
-The site uses `/id` and `/en` routes. Add translated copy to both files in `messages/` and keep their message keys aligned.
+The site uses `/id` and `/en` routes. Add localized landing page content to both locale objects in `data/landing.ts` and keep their structure aligned.

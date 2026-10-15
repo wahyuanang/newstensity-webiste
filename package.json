@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write app components lib i18n messages middleware.ts next.config.ts package.json tsconfig.json components.json README.md"
+    "format": "prettier --write app components data lib i18n middleware.ts next.config.ts package.json tsconfig.json components.json README.md"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
