@@ -17,7 +17,7 @@ export function SolutionsCarousel({ label, imageAlt }: SolutionsCarouselProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
-      className="relative mx-auto aspect-[520/470] w-full max-w-[520px]"
+      className="relative mx-auto aspect-520/470 w-full max-w-130"
     >
       <Image
         src="/gifs/newstensity-problem-solutions-carousel-gift.gif"

@@ -48,7 +48,8 @@
     navigation: {
       label: "Main navigation",
       product: "Product",
-      solutions: "Solutions",
+      features: "Features",
+      solutions: "Problem & Solutions",
       login: "Login",
       openMenu: "Open menu",
       closeMenu: "Close menu",
@@ -121,7 +122,8 @@
     navigation: {
       label: "Navigasi utama",
       product: "Produk",
-      solutions: "Solusi",
+      features: "Fitur",
+      solutions: "Masalah & Solusi",
       login: "Masuk",
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",

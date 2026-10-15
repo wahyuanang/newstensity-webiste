@@ -12,7 +12,8 @@ import type { Locale } from "@/i18n/routing";
 
 const navLinks = [
   { key: "product", href: "#product" },
-  { key: "solutions", href: "#solutions" },
+  { key: "solutions", href: "#problem-solutions" },
+  { key: "features", href: "#features" },
 ] as const;
 
 function LanguageFlag({
@@ -75,7 +76,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 px-3 sm:top-5 sm:px-6 lg:px-6">
       <nav
         aria-label={content.label}
-        className="mx-auto flex min-h-[60px] max-w-[1440px] items-center justify-between gap-2 rounded-full border border-blue-light-active bg-blue-light px-4 py-3 text-blue-normal shadow-[0_12px_40px_rgba(13,41,65,0.12)] backdrop-blur-xl dark:border-white/15 dark:bg-[#113454] dark:text-white sm:min-h-[72px] sm:gap-4 sm:px-8 sm:py-4"
+        className="mx-auto flex min-h-15 max-w-360 items-center justify-between gap-2 rounded-full border border-blue-light-active bg-blue-light px-4 py-3 text-blue-normal shadow-[0_12px_40px_rgba(13,41,65,0.12)] backdrop-blur-xl dark:border-white/15 dark:bg-blue-dark-active dark:text-white sm:min-h-18 sm:gap-4 sm:px-8 sm:py-4"
       >
         <button
           type="button"
@@ -92,7 +93,7 @@ export function Navbar() {
         <Link
           href="/"
           aria-label="Newstensity"
-          className="relative order-2 h-8 w-28 shrink-0 sm:h-10 sm:w-36 lg:order-none lg:h-12 lg:w-36 xl:w-44"
+          className="relative order-2 h-8 w-28 shrink-0 sm:h-10 sm:w-36 lg:order-0 lg:h-12 lg:w-36 xl:w-44"
         >
           <Image
             src="/images/logo-blue.png"
@@ -150,7 +151,7 @@ export function Navbar() {
             {desktopLanguageOpen && (
               <div
                 id="desktop-language-options"
-                className="absolute right-0 top-full z-50 mt-2 w-52 rounded-2xl border border-border bg-background p-2 shadow-xl dark:border-white/15 dark:bg-[#113454]"
+                className="absolute right-0 top-full z-50 mt-2 w-52 rounded-2xl border border-border bg-background p-2 shadow-xl dark:border-white/15 dark:bg-blue-dark-active"
               >
                 <Link
                   href={pathname}
@@ -212,7 +213,7 @@ export function Navbar() {
             {mobileLanguageOpen && (
               <div
                 id="mobile-language-options"
-                className="absolute right-0 top-full z-50 mt-2 w-48 rounded-2xl border border-border bg-background p-2 shadow-xl dark:border-white/15 dark:bg-[#113454]"
+                className="absolute right-0 top-full z-50 mt-2 w-48 rounded-2xl border border-border bg-background p-2 shadow-xl dark:border-white/15 dark:bg-blue-dark-active"
               >
                 <Link
                   href={pathname}
@@ -245,7 +246,7 @@ export function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="mx-3 mt-3 grid gap-1 rounded-3xl border border-border bg-background p-3 shadow-lg lg:hidden dark:border-white/15 dark:bg-[#113454]">
+        <div className="mx-3 mt-3 grid gap-1 rounded-3xl border border-border bg-background p-3 shadow-lg lg:hidden dark:border-white/15 dark:bg-blue-dark-active">
           {navLinks.map(({ key, href }) => (
             <Link
               key={key}

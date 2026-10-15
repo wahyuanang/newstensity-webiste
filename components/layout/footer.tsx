@@ -12,7 +12,8 @@ import { Link } from "@/i18n/navigation";
 
 const navLinks = [
   { key: "product", href: "#product" },
-  { key: "solutions", href: "#solutions" },
+  { key: "solutions", href: "#problem-solutions" },
+  { key: "features", href: "#features" },
 ] as const;
 
 const socials = [
@@ -28,13 +29,13 @@ export async function Footer() {
   const footer = content.footer;
 
   return (
-    <footer id="contact" className="bg-background text-foreground">
+    <footer id="contact" className="rounded-t-3xl bg-blue-dark-active text-white">
       <div className="page-container pb-6 pt-20 sm:pt-24">
         <section className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {footer.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-muted sm:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-blue-light sm:text-base">
             {footer.description}
           </p>
           <Link
@@ -64,7 +65,7 @@ export async function Footer() {
               <Link
                 key={key}
                 href={href}
-                className="text-sm text-foreground transition-colors hover:text-blue-normal"
+                className="text-sm text-blue-light transition-colors hover:text-white"
               >
                 {content.navigation[key]}
               </Link>
@@ -76,7 +77,7 @@ export async function Footer() {
                 key={label}
                 href="#social"
                 aria-label={label}
-                className="inline-flex size-10 items-center justify-center rounded-full border border-border transition-colors hover:bg-surface"
+                className="inline-flex size-10 items-center justify-center rounded-full border border-blue-light/40 text-blue-light transition-colors hover:bg-white hover:text-blue-dark-active"
               >
                 <Icon aria-hidden="true" size={17} />
               </a>
@@ -84,16 +85,16 @@ export async function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-muted sm:flex-row sm:text-sm">
+        <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-blue-light sm:flex-row sm:text-sm">
           <p>
             {footer.copyrightLabel} {new Date().getFullYear()} Newstensity.{" "}
             {footer.copyright}
           </p>
           <div className="flex gap-6">
-            <Link href="#terms" className="hover:text-blue-normal">
+            <Link href="#terms" className="transition-colors hover:text-white">
               {footer.terms}
             </Link>
-            <Link href="#privacy" className="hover:text-blue-normal">
+            <Link href="#privacy" className="transition-colors hover:text-white">
               {footer.privacy}
             </Link>
           </div>

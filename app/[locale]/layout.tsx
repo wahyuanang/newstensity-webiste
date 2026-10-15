@@ -55,11 +55,11 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[52rem] bg-[url('/images/bg-hero-lightmode.png')] bg-cover bg-top bg-no-repeat opacity-90 dark:bg-[url('/images/bg-hero-darkmode.png')] dark:opacity-60"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 h-208 bg-[url('/images/bg-hero-lightmode.png')] bg-cover bg-top bg-no-repeat opacity-90 dark:bg-[url('/images/bg-hero-darkmode.png')] dark:opacity-60"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[52rem] bg-gradient-to-b from-white/10 via-white/10 to-background dark:from-blue-darker/5 dark:via-blue-darker/10 dark:to-background"
+            className="pointer-events-none absolute inset-x-0 top-0 z-0 h-208 bg-linear-to-b from-white/10 via-white/10 to-background dark:from-blue-darker/5 dark:via-blue-darker/10 dark:to-background"
           />
           <Navbar />
           <div className="relative z-10 min-h-screen pt-24">

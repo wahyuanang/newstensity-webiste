@@ -11,7 +11,7 @@ export async function SolutionsSection() {
 
   return (
     <section
-      id="solutions"
+      id="problem-solutions"
       aria-labelledby="solutions-title"
       className="scroll-mt-28 bg-background py-16 sm:py-20 lg:py-28"
     >
