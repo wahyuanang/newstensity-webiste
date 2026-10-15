@@ -1,0 +1,34 @@
+{
+  "Metadata": {
+    "title": "Newstensity | Intelijen Media",
+    "description": "Pahami percakapan media dan ubah berita menjadi intelijen yang dapat ditindaklanjuti."
+  },
+  "Navigation": {
+    "label": "Navigasi utama",
+    "product": "Produk",
+    "solutions": "Solusi",
+    "features": "Fitur",
+    "explore": "Jelajahi",
+    "faq": "FAQ",
+    "login": "Masuk",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "switchLanguage": "Ganti bahasa"
+  },
+  "Home": {
+    "eyebrow": "Intelijen media yang lebih jelas",
+    "title": "Ubah media menjadi",
+    "titleAccent": "intelijen.",
+    "description": "Pahami percakapan, temukan sinyal penting, dan ambil keputusan dengan lebih percaya diri.",
+    "cta": "Jelajahi produk"
+  },
+  "Footer": {
+    "title": "Siap mengubah media menjadi intelijen?",
+    "description": "Minta demo personal dan temukan bagaimana Newstensity membantu organisasi memahami lanskap media.",
+    "requestDemo": "Minta demo",
+    "navigation": "Navigasi footer",
+    "terms": "Ketentuan layanan",
+    "privacy": "Kebijakan privasi",
+    "copyright": "Hak cipta dilindungi."
+  }
+}

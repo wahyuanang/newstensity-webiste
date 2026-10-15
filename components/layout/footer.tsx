@@ -1,0 +1,104 @@
+﻿import { getTranslations } from "next-intl/server";
+import {
+  ArrowRight,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import { buttonStyles } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
+
+const navLinks = [
+  { key: "product", href: "#product" },
+  { key: "solutions", href: "#solutions" },
+  { key: "features", href: "#features" },
+  { key: "explore", href: "#explore" },
+  { key: "faq", href: "#faq" },
+] as const;
+
+const socials = [
+  { label: "LinkedIn", Icon: Linkedin },
+  { label: "Instagram", Icon: Instagram },
+  { label: "YouTube", Icon: Youtube },
+  { label: "Twitter", Icon: Twitter },
+];
+
+export async function Footer() {
+  const t = await getTranslations("Footer");
+  const nav = await getTranslations("Navigation");
+
+  return (
+    <footer className="bg-blue-darker text-white">
+      <div className="mx-auto max-w-7xl px-6 pb-6 pt-20 sm:px-10 sm:pt-24">
+        <section className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            {t("title")}
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
+            {t("description")}
+          </p>
+          <Link
+            href="#contact"
+            className={buttonStyles(
+              "secondary",
+              "mt-6 bg-white text-blue-normal hover:bg-blue-light dark:bg-white dark:text-blue-normal dark:hover:bg-blue-light",
+            )}
+          >
+            {t("requestDemo")} <ArrowRight aria-hidden="true" size={17} />
+          </Link>
+        </section>
+
+        <div className="mt-20 flex flex-col items-center justify-between gap-8 border-b border-white/70 pb-12 lg:flex-row">
+          <Link
+            href="/"
+            aria-label="Newstensity"
+            className="rounded-2xl bg-white px-5 py-3 text-2xl font-semibold tracking-tight text-blue-normal"
+          >
+            newstensity
+          </Link>
+          <nav
+            aria-label={t("navigation")}
+            className="flex flex-wrap justify-center gap-x-8 gap-y-3"
+          >
+            {navLinks.map(({ key, href }) => (
+              <Link
+                key={key}
+                href={href}
+                className="text-sm text-white transition-colors hover:text-sky-300"
+              >
+                {nav(key)}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-3">
+            {socials.map(({ label, Icon }) => (
+              <a
+                key={label}
+                href="#social"
+                aria-label={label}
+                className="inline-flex size-10 items-center justify-center rounded-full border border-white/80 transition-colors hover:bg-white/10"
+              >
+                <Icon aria-hidden="true" size={17} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col-reverse items-center justify-between gap-4 pt-5 text-xs text-white/90 sm:flex-row sm:text-sm">
+          <p>
+            Copyright {new Date().getFullYear()} Newstensity. {t("copyright")}
+          </p>
+          <div className="flex gap-6">
+            <Link href="#terms" className="hover:text-sky-300">
+              {t("terms")}
+            </Link>
+            <Link href="#privacy" className="hover:text-sky-300">
+              {t("privacy")}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

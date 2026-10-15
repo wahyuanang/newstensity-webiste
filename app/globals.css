@@ -1,24 +1,154 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   color-scheme: light;
   --background: #ffffff;
-  --foreground: #111827;
+  --foreground: #0d2941;
+  --muted: #64748b;
+  --surface: #f8fafc;
+  --border: #e2e8f0;
+}
+
+:root.dark,
+.dark {
+  color-scheme: dark;
+  --background: #0d2941;
+  --foreground: #f8fafc;
+  --muted: #b8c8d8;
+  --surface: #133b5e;
+  --border: #275b89;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: #0d2941;
+    --foreground: #f8fafc;
+    --muted: #b8c8d8;
+    --surface: #133b5e;
+    --border: #275b89;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: #2674ba;
+  --color-primary: #2674ba;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--surface);
+  --color-secondary-foreground: var(--foreground);
+  --color-accent: var(--surface);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: #d64545;
+  --color-destructive-foreground: #ffffff;
+  --color-blue-light: #e9f1f8;
+  --color-blue-light-hover: #deebf5;
+  --color-blue-light-active: #bcd4ea;
+  --color-blue-normal: #2674ba;
+  --color-blue-hover: #2268a7;
+  --color-blue-active: #1e5d95;
+  --color-blue-dark: #1d578c;
+  --color-blue-dark-hover: #174670;
+  --color-blue-dark-active: #113454;
+  --color-blue-darker: #0d2941;
+  --color-badge-blue-bg: #1b4468;
+  --color-badge-blue-border: #275b89;
+  --color-badge-blue-text: #8cc4f7;
+  --color-badge-red-bg: #333d56;
+  --color-badge-red-border: #63495d;
+  --color-badge-red-text: #fca5a5;
+  --color-badge-green-bg: #184a5c;
+  --color-badge-green-border: #1f6c6b;
+  --color-badge-green-text: #6ee7b7;
+  --color-grey-light: #f0f1f3;
+  --color-grey-light-hover: #e8eaee;
+  --color-grey-light-active: #cfd4db;
+  --color-grey-normal: #64748b;
+  --color-grey-hover: #5a687d;
+  --color-grey-active: #505d6f;
+  --color-grey-dark: #4b5768;
+  --color-grey-dark-hover: #3c4653;
+  --color-grey-dark-active: #2d343f;
+  --color-grey-darker: #232931;
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
-* { box-sizing: border-box; }
-html { min-height: 100%; }
+* {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+}
 body {
   min-height: 100vh;
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+:root {
+  --badge-blue-bg: #e9f1f8;
+  --badge-blue-border: #bcd4ea;
+  --badge-blue-text: #2268a7;
+  --badge-red-bg: #fff1f2;
+  --badge-red-border: #fecaca;
+  --badge-red-text: #c13e3e;
+  --badge-green-bg: #e9f6f0;
+  --badge-green-border: #bae2d1;
+  --badge-green-text: #188456;
+}
+
+:root.dark,
+.dark {
+  --badge-blue-bg: #1b4468;
+  --badge-blue-border: #275b89;
+  --badge-blue-text: #8cc4f7;
+  --badge-red-bg: #333d56;
+  --badge-red-border: #63495d;
+  --badge-red-text: #fca5a5;
+  --badge-green-bg: #184a5c;
+  --badge-green-border: #1f6c6b;
+  --badge-green-text: #6ee7b7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --badge-blue-bg: #1b4468;
+    --badge-blue-border: #275b89;
+    --badge-blue-text: #8cc4f7;
+    --badge-red-bg: #333d56;
+    --badge-red-border: #63495d;
+    --badge-red-text: #fca5a5;
+    --badge-green-bg: #184a5c;
+    --badge-green-border: #1f6c6b;
+    --badge-green-text: #6ee7b7;
+  }
+}
+
+.badge-blue {
+  background: var(--badge-blue-bg);
+  border-color: var(--badge-blue-border);
+  color: var(--badge-blue-text);
+}
+.badge-red {
+  background: var(--badge-red-bg);
+  border-color: var(--badge-red-border);
+  color: var(--badge-red-text);
+}
+.badge-green {
+  background: var(--badge-green-bg);
+  border-color: var(--badge-green-border);
+  color: var(--badge-green-text);
 }

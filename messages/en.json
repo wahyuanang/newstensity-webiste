@@ -1,0 +1,34 @@
+{
+  "Metadata": {
+    "title": "Newstensity | Media Intelligence",
+    "description": "Understand media conversations and turn news into actionable intelligence."
+  },
+  "Navigation": {
+    "label": "Main navigation",
+    "product": "Product",
+    "solutions": "Solutions",
+    "features": "Features",
+    "explore": "Explore",
+    "faq": "FAQ",
+    "login": "Login",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLanguage": "Change language"
+  },
+  "Home": {
+    "eyebrow": "Clearer media intelligence",
+    "title": "Turn media into",
+    "titleAccent": "intelligence.",
+    "description": "Understand conversations, find important signals, and make decisions with confidence.",
+    "cta": "Explore the product"
+  },
+  "Footer": {
+    "title": "Ready to transform media into intelligence?",
+    "description": "Request a personalized demo and see how Newstensity helps your organization understand the media landscape.",
+    "requestDemo": "Request a demo",
+    "navigation": "Footer navigation",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "copyright": "All rights reserved."
+  }
+}
