@@ -57,7 +57,7 @@ export async function FeaturesSection() {
     <section
       id="features"
       aria-labelledby="features-title"
-      className="scroll-mt-28 bg-background py-14 sm:py-20 lg:py-24"
+      className="scroll-mt-28 bg-background py-20"
     >
       <div className="page-container">
         <header className="mx-auto mb-9 max-w-3xl text-center sm:mb-10">
@@ -66,11 +66,11 @@ export async function FeaturesSection() {
           </Badge>
           <h2
             id="features-title"
-            className="text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl lg:text-[2.65rem]"
+            className="text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-[48px]"
           >
             {t.title} <span className="text-blue-normal">{t.accent}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-foreground sm:text-base sm:leading-7">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-7 text-foreground">
             {t.intro}
           </p>
         </header>

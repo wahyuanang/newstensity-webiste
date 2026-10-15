@@ -50,6 +50,7 @@
       product: "Product",
       features: "Features",
       solutions: "Problem & Solutions",
+      faq: "FAQ",
       login: "Login",
       openMenu: "Open menu",
       closeMenu: "Close menu",
@@ -68,9 +69,16 @@
       copyright: "All rights reserved.",
     },
     metadata: {
-      title: "Newstensity | Media Intelligence",
+      title: "Newstensity | Media Monitoring & Intelligence",
       description:
-        "Understand media conversations and turn news into actionable intelligence.",
+        "Monitor news, analyze sentiment, discover trends, and turn media coverage into actionable intelligence with Newstensity.",
+      keywords: [
+        "media monitoring",
+        "media intelligence",
+        "sentiment analysis",
+        "trend discovery",
+        "crisis detection",
+      ],
     },
   },
   id: {
@@ -124,6 +132,7 @@
       product: "Produk",
       features: "Fitur",
       solutions: "Masalah & Solusi",
+      faq: "FAQ",
       login: "Masuk",
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",
@@ -142,9 +151,16 @@
       copyright: "Hak cipta dilindungi.",
     },
     metadata: {
-      title: "Newstensity | Intelijen Media",
+      title: "Newstensity | Monitoring & Intelijen Media",
       description:
-        "Pahami percakapan media dan ubah berita menjadi intelijen yang dapat ditindaklanjuti.",
+        "Pantau berita, analisis sentimen, temukan tren, dan ubah liputan media menjadi insight yang dapat ditindaklanjuti bersama Newstensity.",
+      keywords: [
+        "monitoring media",
+        "intelijen media",
+        "analisis sentimen",
+        "penemuan tren",
+        "deteksi krisis",
+      ],
     },
   },
 } as const;

@@ -14,6 +14,7 @@ const navLinks = [
   { key: "product", href: "#product" },
   { key: "solutions", href: "#problem-solutions" },
   { key: "features", href: "#features" },
+  { key: "faq", href: "#faq" },
 ] as const;
 
 function LanguageFlag({

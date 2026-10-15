@@ -14,6 +14,7 @@ const navLinks = [
   { key: "product", href: "#product" },
   { key: "solutions", href: "#problem-solutions" },
   { key: "features", href: "#features" },
+  { key: "faq", href: "#faq" },
 ] as const;
 
 const socials = [
@@ -29,7 +30,7 @@ export async function Footer() {
   const footer = content.footer;
 
   return (
-    <footer id="contact" className="rounded-t-3xl bg-blue-dark-active text-white">
+    <footer className="rounded-t-3xl bg-blue-dark-active text-white">
       <div className="page-container pb-6 pt-20 sm:pt-24">
         <section className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">

@@ -30,18 +30,18 @@ export async function HeroSection() {
   return (
     <section
       id="product"
-      className="relative isolate overflow-hidden bg-transparent pb-14 pt-6 sm:pb-20 sm:pt-10 lg:pt-24"
+      className="relative isolate overflow-hidden bg-transparent pb-20 pt-6 sm:pt-10 lg:pt-24"
     >
       <div className="page-container text-center">
         <FadeIn className="mx-auto max-w-3xl">
           <Badge variant="blue" className="mb-6 uppercase">
             {content.eyebrow}
           </Badge>
-          <h1 className="text-[2rem] font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] xl:text-5xl">
+          <h1 className="text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-[48px]">
             {content.title}{" "}
             <span className="text-blue-normal">{content.titleAccent}</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-6 text-muted sm:text-base sm:leading-7 lg:text-lg">
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-7 text-muted">
             {content.description}
           </p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">

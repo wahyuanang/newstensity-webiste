@@ -34,6 +34,7 @@ export async function generateMetadata({
   return {
     title: metadata.title,
     description: metadata.description,
+    keywords: [...metadata.keywords],
     alternates: {
       canonical: `/${locale}`,
       languages: { id: "/id", en: "/en" },

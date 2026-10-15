@@ -13,7 +13,7 @@ export async function SolutionsSection() {
     <section
       id="problem-solutions"
       aria-labelledby="solutions-title"
-      className="scroll-mt-28 bg-background py-16 sm:py-20 lg:py-28"
+      className="scroll-mt-28 bg-background py-20"
     >
       <div className="page-container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <SolutionsCarousel
@@ -26,11 +26,11 @@ export async function SolutionsSection() {
           </Badge>
           <h2
             id="solutions-title"
-            className="text-3xl font-semibold leading-tight tracking-tight text-blue-dark sm:text-4xl lg:text-[2.5rem]"
+            className="text-3xl font-semibold leading-tight tracking-tight text-blue-dark dark:text-blue-light sm:text-[48px]"
           >
             {content.title}
           </h2>
-          <p className="mt-4 text-sm leading-6 text-foreground sm:text-base sm:leading-7">
+          <p className="mt-4 text-lg leading-7 text-foreground">
             {content.description}
           </p>
           <dl className="mt-6 grid grid-cols-3 divide-x divide-border">
@@ -39,10 +39,10 @@ export async function SolutionsSection() {
                 key={stat.label}
                 className="px-3 first:pl-0 last:pr-0 sm:px-6"
               >
-                <dt className="text-2xl font-medium leading-none text-foreground sm:text-3xl">
+                <dt className="text-2xl font-medium leading-none text-foreground sm:text-4xl">
                   {stat.value}
                 </dt>
-                <dd className="mt-3 text-xs text-blue-normal sm:text-sm">
+                <dd className="mt-3 text-xs text-blue-normal sm:text-sm font-medium">
                   {stat.label}
                 </dd>
               </div>
