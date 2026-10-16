@@ -64,13 +64,13 @@ export async function FaqSection() {
         <Accordion
           type="single"
           collapsible
-          className="mx-auto mt-8 w-full max-w-3xl space-y-3"
+          className="mx-auto mt-8 w-full max-w-3xl space-y-3 pb-1"
         >
           {content.questions.map(({ question, answer }, index) => (
             <AccordionItem
               key={question}
               value={`question-${index + 1}`}
-              className="overflow-hidden rounded-2xl border border-blue-darker/60 bg-background/70 px-5 dark:border-blue-light-active/45 dark:bg-blue-darker/35 sm:px-6"
+              className="overflow-hidden rounded-2xl border border-blue-darker/60 bg-background/70 px-5 last:border-b dark:border-blue-light-active/45 dark:bg-blue-darker/35 sm:px-6"
             >
               <AccordionTrigger className="py-4 text-left text-sm font-medium text-blue-dark hover:no-underline sm:text-base dark:text-blue-light-active [&>svg]:text-blue-dark dark:[&>svg]:text-blue-light-active">
                 {question}

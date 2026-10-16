@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { landingContent, type LandingLocale } from "@/data/landing";
 import { Link } from "@/i18n/navigation";
+import { CountUpNumber } from "@/components/ui/count-up-number";
 
 export async function SolutionsSection() {
   const locale = (await getLocale()) as LandingLocale;
@@ -40,7 +41,7 @@ export async function SolutionsSection() {
                 className="px-3 first:pl-0 last:pr-0 sm:px-6"
               >
                 <dt className="text-2xl font-medium leading-none text-foreground sm:text-4xl">
-                  {stat.value}
+                  <CountUpNumber value={stat.value} />
                 </dt>
                 <dd className="mt-3 text-xs text-blue-normal sm:text-sm font-medium">
                   {stat.label}
